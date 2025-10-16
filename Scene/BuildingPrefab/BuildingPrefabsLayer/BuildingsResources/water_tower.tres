@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="BuildingResource" load_steps=4 format=3 uid="uid://bba1q8khl11vi"]
+
+[ext_resource type="PackedScene" uid="uid://bbifmch3ohlai" path="res://Scene/BuildingPrefab/BuildingPrefabsLayer/water_tower.tscn" id="1_i55i5"]
+[ext_resource type="Script" uid="uid://dhq3lwsdvt365" path="res://Scene/BuildingPrefab/buildings_resource.gd" id="1_ws857"]
+[ext_resource type="Texture2D" uid="uid://bdqs2i8ao3qtv" path="res://assets/building_icon/Water_Tower.png" id="2_hcng7"]
+
+[resource]
+script = ExtResource("1_ws857")
+Name = "water_tower"
+icon = ExtResource("2_hcng7")
+BuildingScene = ExtResource("1_i55i5")
+metadata/_custom_type_script = "uid://dhq3lwsdvt365"

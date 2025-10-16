@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0uqeyhu4ppg5"]
+
+[ext_resource type="PackedScene" uid="uid://cuywbdo4npxox" path="res://Scene/BuildingPrefab/Building.res" id="1_m425f"]
+[ext_resource type="Script" uid="uid://cevcro633liqb" path="res://Scene/BuildingPrefab/Buildings.gd" id="2_u4557"]
+
+[node name="culture" instance=ExtResource("1_m425f")]
+item_name = &"Culture"
+
+[node name="TileMapLayer" parent="." index="0"]
+tile_map_data = PackedByteArray(0, 0, 4, 0, 2, 0, 0, 0, 45, 0, 14, 0, 0, 0)
+script = ExtResource("2_u4557")

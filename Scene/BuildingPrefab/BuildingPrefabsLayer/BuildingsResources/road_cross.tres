@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="BuildingResource" load_steps=5 format=3 uid="uid://dwg2jxthctple"]
+
+[ext_resource type="Script" uid="uid://dhq3lwsdvt365" path="res://Scene/BuildingPrefab/buildings_resource.gd" id="1_7y6co"]
+[ext_resource type="PackedScene" uid="uid://by7tvhy74flbe" path="res://Scene/BuildingPrefab/BuildingPrefabsLayer/road_cross.tscn" id="1_ntmsy"]
+[ext_resource type="Texture2D" uid="uid://bkwma782hkrni" path="res://assets/building_prefab_tex/Road Tileset.png" id="2_r2gvv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ti5wi"]
+atlas = ExtResource("2_r2gvv")
+region = Rect2(96.6461, 96.0518, 15.2698, 15.1346)
+
+[resource]
+script = ExtResource("1_7y6co")
+Name = ""
+icon = SubResource("AtlasTexture_ti5wi")
+BuildingScene = ExtResource("1_ntmsy")
+metadata/_custom_type_script = "uid://dhq3lwsdvt365"

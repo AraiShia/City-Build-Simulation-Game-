@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdttpw0hyfwrx"]
+
+[ext_resource type="PackedScene" uid="uid://cuywbdo4npxox" path="res://Scene/BuildingPrefab/Building.res" id="1_rxukm"]
+
+[node name="residential" instance=ExtResource("1_rxukm")]
+item_name = &"Residential"
+
+[node name="TileMapLayer" parent="." index="0"]
+tile_map_data = PackedByteArray(0, 0, 3, 0, 6, 0, 0, 0, 37, 0, 6, 0, 0, 0)

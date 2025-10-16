@@ -1,0 +1,61 @@
+[gd_scene load_steps=2 format=3 uid="uid://8jwgp6w0ogr8"]
+
+[ext_resource type="Script" uid="uid://cly8wt8htptte" path="res://scripts/GUI/Pause_Menu.gd" id="1_6dwu7"]
+
+[node name="Pause" type="CanvasLayer" node_paths=PackedStringArray("ResumeButton", "QuitButton", "BackButton")]
+process_mode = 3
+script = ExtResource("1_6dwu7")
+ResumeButton = NodePath("PauseMenu/Resume_Game")
+QuitButton = NodePath("PauseMenu/Quit_Game")
+BackButton = NodePath("PauseMenu/Back_To_MainMenu")
+
+[node name="PauseMenu" type="Panel" parent="."]
+layout_direction = 4
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -216.0
+offset_right = 216.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="Resume_Game" type="Button" parent="PauseMenu"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -24.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "恢复游戏"
+
+[node name="Back_To_MainMenu" type="Button" parent="PauseMenu"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 26.0
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "回到主菜单"
+
+[node name="Quit_Game" type="Button" parent="PauseMenu"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 76.0
+offset_bottom = 106.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "退出到桌面"

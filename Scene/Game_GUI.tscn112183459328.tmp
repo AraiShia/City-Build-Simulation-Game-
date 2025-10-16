@@ -1,0 +1,361 @@
+[gd_scene load_steps=23 format=3 uid="uid://oovklo5xc0f6"]
+
+[ext_resource type="Script" uid="uid://dnh53v2mc2k8a" path="res://Scene/game_gui.gd" id="1_8po2a"]
+[ext_resource type="Script" uid="uid://iudgcjakspei" path="res://scripts/GUI/game_gui.gd" id="1_fy2tq"]
+[ext_resource type="Texture2D" uid="uid://ddrt2qv7nk0v7" path="res://assets/speed_0x.png" id="2_6f1pv"]
+[ext_resource type="Script" uid="uid://d5oqe7qkt7o4" path="res://scripts/Base/Game_Speed_Control.gd" id="2_i23dj"]
+[ext_resource type="Texture2D" uid="uid://de3iv8kstyie4" path="res://assets/speed_1x.png" id="3_7rw3t"]
+[ext_resource type="Texture2D" uid="uid://c6np2dcrvo6y8" path="res://assets/speed_2x.png" id="4_ytnvt"]
+[ext_resource type="Texture2D" uid="uid://dj6881dj46hxf" path="res://assets/speed_8x.png" id="5_8po2a"]
+[ext_resource type="Texture2D" uid="uid://b30qtcbl1d0dd" path="res://assets/road_icon.png" id="6_gg4d5"]
+[ext_resource type="Texture2D" uid="uid://dalfijpohq1my" path="res://assets/water_icon.png" id="7_i23dj"]
+[ext_resource type="Script" uid="uid://caqcoqyya3phx" path="res://scripts/Base/main_button.gd" id="7_kg7f6"]
+[ext_resource type="Texture2D" uid="uid://7wopqjror5rn" path="res://assets/electric_icon.png" id="8_kg7f6"]
+[ext_resource type="Texture2D" uid="uid://by8n80jausse1" path="res://assets/forcitizens_icon.png" id="9_1r300"]
+[ext_resource type="Texture2D" uid="uid://bgmqbcowmii1s" path="res://assets/constructions_icon.png" id="10_sxjoe"]
+[ext_resource type="Texture2D" uid="uid://cpuoeuefilna7" path="res://assets/residential_icon.png" id="11_0ocvp"]
+[ext_resource type="Texture2D" uid="uid://cwb5ossolwqr7" path="res://assets/culture_icon.png" id="12_es8ps"]
+[ext_resource type="Script" uid="uid://cnyxy54aees2g" path="res://scripts/Base/balance.gd" id="17_gg4d5"]
+[ext_resource type="Texture2D" uid="uid://bdqs2i8ao3qtv" path="res://assets/building_icon/Water_Tower.png" id="17_i23dj"]
+[ext_resource type="Texture2D" uid="uid://lnu32gbar6cj" path="res://assets/building_icon/Power_Plant.png" id="18_0ocvp"]
+[ext_resource type="Texture2D" uid="uid://cfrtidyy7w8h7" path="res://assets/building_icon/Farm.png" id="19_es8ps"]
+[ext_resource type="Texture2D" uid="uid://b3npa1codwkpk" path="res://assets/building_icon/Construction.png" id="20_gdnxj"]
+[ext_resource type="Texture2D" uid="uid://cl74etx7ctgs" path="res://assets/building_icon/Residential.png" id="21_y7w7q"]
+[ext_resource type="Texture2D" uid="uid://q8eka8hby8vo" path="res://assets/building_icon/Culture.png" id="22_ncupr"]
+
+[node name="Game_GUI" type="Control" node_paths=PackedStringArray("water_tower_button", "power_plant_button", "farm_button", "construction_button", "residential_button", "culture_button")]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_8po2a")
+water_tower_button = NodePath("CanvasLayer/WaterPanel/HBoxContainer/Water_Tower_Build")
+power_plant_button = NodePath("CanvasLayer/PowerPanel/HBoxContainer/Power_Plant_Build")
+farm_button = NodePath("CanvasLayer/forcitizensPanel/HBoxContainer/forcitizens_Build")
+construction_button = NodePath("CanvasLayer/ConstructionPanel/HBoxContainer/Construction_Build")
+residential_button = NodePath("CanvasLayer/ResidentialPanel/HBoxContainer/Residential_Build")
+culture_button = NodePath("CanvasLayer/CulturePanel/HBoxContainer/Culture_Build")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("1_fy2tq")
+
+[node name="Main_Button_Area" type="MarginContainer" parent="CanvasLayer"]
+self_modulate = Color(0.239216, 0.239216, 0.239216, 1)
+show_behind_parent = true
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -100.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Main_Button_Area"]
+self_modulate = Color(0.0980392, 0.207843, 1, 1)
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Main_Button_Area"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Main_Button_Area/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Main_Button_Area/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="Time" type="RichTextLabel" parent="CanvasLayer/Main_Button_Area/HBoxContainer/VBoxContainer/Panel"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+offset_top = 4.0
+offset_right = 200.0
+offset_bottom = 34.0
+text = "Time"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameSpeedControl" type="HBoxContainer" parent="CanvasLayer/Main_Button_Area/HBoxContainer/VBoxContainer" node_paths=PackedStringArray("SpeedButtonNormal", "SpeedButtonFast", "SpeedFastest_Button", "PasueButton")]
+process_mode = 3
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+script = ExtResource("2_i23dj")
+SpeedButtonNormal = NodePath("SpeedNormal_Button")
+SpeedButtonFast = NodePath("SpeedFast_Button")
+SpeedFastest_Button = NodePath("SpeedFastest_Button")
+PasueButton = NodePath("Pause_Button")
+
+[node name="Deco_Block_Left" type="Panel" parent="CanvasLayer/Main_Button_Area/HBoxContainer/VBoxContainer/GameSpeedControl"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Pause_Button" type="Button" parent="CanvasLayer/Main_Button_Area/HBoxContainer/VBoxContainer/GameSpeedControl"]
+layout_mode = 2
+size_flags_horizontal = 3
+icon = ExtResource("2_6f1pv")
+expand_icon = true
+
+[node name="SpeedNormal_Button" type="Button" parent="CanvasLayer/Main_Button_Area/HBoxContainer/VBoxContainer/GameSpeedControl"]
+layout_mode = 2
+size_flags_horizontal = 3
+icon = ExtResource("3_7rw3t")
+expand_icon = true
+
+[node name="SpeedFast_Button" type="Button" parent="CanvasLayer/Main_Button_Area/HBoxContainer/VBoxContainer/GameSpeedControl"]
+layout_mode = 2
+size_flags_horizontal = 3
+icon = ExtResource("4_ytnvt")
+expand_icon = true
+
+[node name="SpeedFastest_Button" type="Button" parent="CanvasLayer/Main_Button_Area/HBoxContainer/VBoxContainer/GameSpeedControl"]
+layout_mode = 2
+size_flags_horizontal = 3
+icon = ExtResource("5_8po2a")
+expand_icon = true
+
+[node name="Deco_Block_Right" type="Panel" parent="CanvasLayer/Main_Button_Area/HBoxContainer/VBoxContainer/GameSpeedControl"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/Main_Button_Area/HBoxContainer"]
+layout_mode = 2
+
+[node name="MainButton" type="HBoxContainer" parent="CanvasLayer/Main_Button_Area/HBoxContainer/VBoxContainer2" node_paths=PackedStringArray("RoadBuildButton", "WaterBuildButton", "PowerBuildButton", "ForcitizensBuildButton", "ConstructionBuildButton", "ResidentialBuildButton", "CultureBuildButton")]
+layout_mode = 2
+script = ExtResource("7_kg7f6")
+RoadBuildButton = NodePath("Road_GUI")
+WaterBuildButton = NodePath("Water")
+PowerBuildButton = NodePath("Power")
+ForcitizensBuildButton = NodePath("forcitizens")
+ConstructionBuildButton = NodePath("Construction")
+ResidentialBuildButton = NodePath("Residential")
+CultureBuildButton = NodePath("Culture")
+Game_GUI_Node = NodePath("../../../..")
+
+[node name="Road_GUI" type="Button" parent="CanvasLayer/Main_Button_Area/HBoxContainer/VBoxContainer2/MainButton"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+icon = ExtResource("6_gg4d5")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Water" type="Button" parent="CanvasLayer/Main_Button_Area/HBoxContainer/VBoxContainer2/MainButton"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+icon = ExtResource("7_i23dj")
+expand_icon = true
+
+[node name="Power" type="Button" parent="CanvasLayer/Main_Button_Area/HBoxContainer/VBoxContainer2/MainButton"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+icon = ExtResource("8_kg7f6")
+expand_icon = true
+
+[node name="forcitizens" type="Button" parent="CanvasLayer/Main_Button_Area/HBoxContainer/VBoxContainer2/MainButton"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+icon = ExtResource("9_1r300")
+expand_icon = true
+
+[node name="Construction" type="Button" parent="CanvasLayer/Main_Button_Area/HBoxContainer/VBoxContainer2/MainButton"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+icon = ExtResource("10_sxjoe")
+expand_icon = true
+
+[node name="Residential" type="Button" parent="CanvasLayer/Main_Button_Area/HBoxContainer/VBoxContainer2/MainButton"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+icon = ExtResource("11_0ocvp")
+expand_icon = true
+
+[node name="Culture" type="Button" parent="CanvasLayer/Main_Button_Area/HBoxContainer/VBoxContainer2/MainButton"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+icon = ExtResource("12_es8ps")
+expand_icon = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/Main_Button_Area/HBoxContainer/VBoxContainer2"]
+self_modulate = Color(0, 0.342837, 0.858584, 1)
+show_behind_parent = true
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Balance" type="RichTextLabel" parent="CanvasLayer/Main_Button_Area/HBoxContainer/VBoxContainer2/HBoxContainer2"]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+text = "Balance"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("17_gg4d5")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Main_Button_Area/HBoxContainer/VBoxContainer2/HBoxContainer2"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Population"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RoadPanel" type="Panel" parent="CanvasLayer"]
+custom_minimum_size = Vector2(0, 40)
+offset_left = 320.0
+offset_top = 496.0
+offset_right = 830.0
+offset_bottom = 546.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/RoadPanel"]
+layout_mode = 0
+offset_top = 4.0
+offset_right = 505.0
+offset_bottom = 44.0
+
+[node name="Road_Build" type="Button" parent="CanvasLayer/RoadPanel/HBoxContainer"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="WaterPanel" type="Panel" parent="CanvasLayer"]
+layout_direction = 4
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 2.502
+anchor_right = 0.5
+anchor_bottom = 2.502
+offset_left = -256.0
+offset_top = -1125.3
+offset_right = 254.0
+offset_bottom = -1075.3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/WaterPanel"]
+offset_top = 4.0
+offset_right = 505.0
+offset_bottom = 44.0
+
+[node name="Water_Tower_Build" type="Button" parent="CanvasLayer/WaterPanel/HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+icon = ExtResource("17_i23dj")
+icon_alignment = 1
+expand_icon = true
+
+[node name="PowerPanel" type="Panel" parent="CanvasLayer"]
+layout_direction = 4
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 2.502
+anchor_right = 0.5
+anchor_bottom = 2.502
+offset_left = -256.0
+offset_top = -1125.3
+offset_right = 254.0
+offset_bottom = -1075.3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/PowerPanel"]
+offset_top = 4.0
+offset_right = 505.0
+offset_bottom = 44.0
+
+[node name="Power_Plant_Build" type="Button" parent="CanvasLayer/PowerPanel/HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+icon = ExtResource("18_0ocvp")
+expand_icon = true
+
+[node name="forcitizensPanel" type="Panel" parent="CanvasLayer"]
+layout_direction = 4
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 2.502
+anchor_right = 0.5
+anchor_bottom = 2.502
+offset_left = -256.0
+offset_top = -1125.3
+offset_right = 254.0
+offset_bottom = -1075.3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/forcitizensPanel"]
+offset_top = 4.0
+offset_right = 505.0
+offset_bottom = 44.0
+
+[node name="forcitizens_Build" type="Button" parent="CanvasLayer/forcitizensPanel/HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+icon = ExtResource("19_es8ps")
+expand_icon = true
+
+[node name="ConstructionPanel" type="Panel" parent="CanvasLayer"]
+layout_direction = 4
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 2.502
+anchor_right = 0.5
+anchor_bottom = 2.502
+offset_left = -256.0
+offset_top = -1125.3
+offset_right = 254.0
+offset_bottom = -1075.3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/ConstructionPanel"]
+offset_top = 4.0
+offset_right = 505.0
+offset_bottom = 44.0
+
+[node name="Construction_Build" type="Button" parent="CanvasLayer/ConstructionPanel/HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+icon = ExtResource("20_gdnxj")
+expand_icon = true
+
+[node name="ResidentialPanel" type="Panel" parent="CanvasLayer"]
+layout_direction = 4
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 2.502
+anchor_right = 0.5
+anchor_bottom = 2.502
+offset_left = -256.0
+offset_top = -1125.3
+offset_right = 254.0
+offset_bottom = -1075.3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/ResidentialPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.08
+anchor_right = 0.990196
+anchor_bottom = 0.88
+metadata/_edit_use_anchors_ = true
+
+[node name="Residential_Build" type="Button" parent="CanvasLayer/ResidentialPanel/HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+icon = ExtResource("21_y7w7q")
+expand_icon = true
+
+[node name="CulturePanel" type="Panel" parent="CanvasLayer"]
+layout_direction = 4
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 2.502
+anchor_right = 0.5
+anchor_bottom = 2.502
+offset_left = -256.0
+offset_top = -1125.3
+offset_right = 254.0
+offset_bottom = -1075.3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/CulturePanel"]
+custom_minimum_size = Vector2(100, 30)
+offset_top = 4.0
+offset_right = 505.0
+offset_bottom = 44.0
+
+[node name="Culture_Build" type="Button" parent="CanvasLayer/CulturePanel/HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+icon = ExtResource("22_ncupr")
+expand_icon = true

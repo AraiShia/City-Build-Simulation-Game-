@@ -1,0 +1,265 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6bvijrmdb6mb"]
+
+[ext_resource type="Script" uid="uid://dyv7t7pv1mk3w" path="res://Scene/control_panels.gd" id="1_k484o"]
+
+[node name="Control_Panels" type="CanvasLayer" node_paths=PackedStringArray("InComeIndex", "OutComeIndex", "LoanIndex", "ResidenMoodIndex", "ResidentialsIndex", "LoanSlider", "LoanButton", "ResourcesWaterIndex", "ResourcesPowerIndex", "ResourcesFoodIndex")]
+script = ExtResource("1_k484o")
+InComeIndex = NodePath("Panel/EconomyPanel/Incomeindex")
+OutComeIndex = NodePath("Panel/EconomyPanel/Outcomeindex")
+LoanIndex = NodePath("Panel/EconomyPanel/LoanIndex")
+ResidenMoodIndex = NodePath("Panel/ResidenPanel/ResidenMoodProgressBar")
+ResidentialsIndex = NodePath("Panel/ResidenPanel/Residentialsindex")
+LoanSlider = NodePath("Panel/EconomyPanel/LoanSlider")
+LoanButton = NodePath("Panel/EconomyPanel/LoanButton")
+ResourcesWaterIndex = NodePath("Panel/ProducePanel/ResourceStorageProgressBar")
+ResourcesPowerIndex = NodePath("Panel/ProducePanel/ResourceStorageProgressBar2")
+ResourcesFoodIndex = NodePath("Panel/ProducePanel/ResourceStorageFoodProgressBar3")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -510.0
+offset_top = -283.0
+offset_right = 492.0
+offset_bottom = 166.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="EconomyPanel" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 294.0
+offset_bottom = 412.0
+
+[node name="EconomyPanelText" type="RichTextLabel" parent="Panel/EconomyPanel"]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 8.0
+offset_right = 206.0
+offset_bottom = 48.0
+text = "经济面板"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LoanText" type="RichTextLabel" parent="Panel/EconomyPanel"]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 49.0
+offset_right = 203.0
+offset_bottom = 89.0
+text = "贷款"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OutcomeText" type="RichTextLabel" parent="Panel/EconomyPanel"]
+layout_mode = 0
+offset_left = -9.0
+offset_top = 170.0
+offset_right = 128.0
+offset_bottom = 210.0
+text = "支出"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IncomeText" type="RichTextLabel" parent="Panel/EconomyPanel"]
+layout_mode = 0
+offset_left = -9.0
+offset_top = 220.0
+offset_right = 128.0
+offset_bottom = 260.0
+text = "收入"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EconomyIndexText" type="RichTextLabel" parent="Panel/EconomyPanel"]
+layout_mode = 0
+offset_left = -5.0
+offset_top = 280.0
+offset_right = 132.0
+offset_bottom = 320.0
+text = "财政指数"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EconomyIndex" type="RichTextLabel" parent="Panel/EconomyPanel"]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 282.0
+offset_right = 239.0
+offset_bottom = 322.0
+text = "0000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Incomeindex" type="RichTextLabel" parent="Panel/EconomyPanel"]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 219.0
+offset_right = 239.0
+offset_bottom = 259.0
+text = "0000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Outcomeindex" type="RichTextLabel" parent="Panel/EconomyPanel"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 168.0
+offset_right = 237.0
+offset_bottom = 208.0
+text = "0000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LoanSlider" type="HSlider" parent="Panel/EconomyPanel"]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 104.0
+offset_right = 218.0
+offset_bottom = 120.0
+
+[node name="LoanIndex" type="RichTextLabel" parent="Panel/EconomyPanel"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 121.0
+offset_right = 202.0
+offset_bottom = 161.0
+text = "0000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LoanButton" type="Button" parent="Panel/EconomyPanel"]
+layout_mode = 0
+offset_left = 198.0
+offset_top = 129.0
+offset_right = 222.0
+offset_bottom = 153.0
+text = "贷款"
+
+[node name="ProducePanel" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_left = 344.0
+offset_top = 26.0
+offset_right = 648.0
+offset_bottom = 414.0
+
+[node name="ResourcePanelText" type="RichTextLabel" parent="Panel/ProducePanel"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 7.0
+offset_right = 225.0
+offset_bottom = 47.0
+text = "资源面板"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResourceStorageProgressBar" type="ProgressBar" parent="Panel/ProducePanel"]
+layout_mode = 0
+offset_left = 141.0
+offset_top = 92.0
+offset_right = 267.0
+offset_bottom = 119.0
+
+[node name="ResourceStorageWaterText" type="RichTextLabel" parent="Panel/ProducePanel"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 86.0
+offset_right = 140.0
+offset_bottom = 126.0
+text = "水"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResourceStoragePowerText2" type="RichTextLabel" parent="Panel/ProducePanel"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 137.0
+offset_right = 139.0
+offset_bottom = 177.0
+text = "电"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResourceStorageProgressBar2" type="ProgressBar" parent="Panel/ProducePanel"]
+layout_mode = 0
+offset_left = 143.0
+offset_top = 141.0
+offset_right = 269.0
+offset_bottom = 168.0
+
+[node name="ResourceStoragePowerText3" type="RichTextLabel" parent="Panel/ProducePanel"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 195.0
+offset_right = 138.0
+offset_bottom = 235.0
+text = "食物"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResourceStorageFoodProgressBar3" type="ProgressBar" parent="Panel/ProducePanel"]
+layout_mode = 0
+offset_left = 143.0
+offset_top = 200.0
+offset_right = 269.0
+offset_bottom = 227.0
+
+[node name="ResidenPanel" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_left = 692.0
+offset_top = 26.0
+offset_right = 977.0
+offset_bottom = 414.0
+
+[node name="ResidenPanelText" type="RichTextLabel" parent="Panel/ResidenPanel"]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 8.0
+offset_right = 206.0
+offset_bottom = 48.0
+text = "人口面板"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResidenMoodProgressBar" type="ProgressBar" parent="Panel/ResidenPanel"]
+layout_mode = 0
+offset_left = 141.0
+offset_top = 92.0
+offset_right = 267.0
+offset_bottom = 119.0
+
+[node name="ResidenMoodText" type="RichTextLabel" parent="Panel/ResidenPanel"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 86.0
+offset_right = 140.0
+offset_bottom = 126.0
+text = "人口心情"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResidentialsText" type="RichTextLabel" parent="Panel/ResidenPanel"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 129.0
+offset_right = 141.0
+offset_bottom = 169.0
+text = "人口数量"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Residentialsindex" type="RichTextLabel" parent="Panel/ResidenPanel"]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 128.0
+offset_right = 273.0
+offset_bottom = 168.0
+text = "0000"
+horizontal_alignment = 1
+vertical_alignment = 1

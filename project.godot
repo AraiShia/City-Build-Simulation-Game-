@@ -1,0 +1,32 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Urban Simulation"
+run/main_scene="uid://dcr8r476ld0pu"
+config/features=PackedStringArray("4.4", "C#", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+ResourcesManager="*res://scripts/Base/resource_manager.gd"
+EconomySystem="*res://scripts/Base/Economy_System.gd"
+NormalBuildSystem="*res://scripts/Base/normal_Build_System.gd"
+HouseholdBehaviorSystem="*res://scripts/Base/Household_Behavior_System.gd"
+ResourceBuyerSystem="*res://scripts/Base/Resource_Buyer_System.gd"
+
+[display]
+
+window/stretch/mode="canvas_items"
+
+[dotnet]
+
+project/assembly_name="Urban Simulation"

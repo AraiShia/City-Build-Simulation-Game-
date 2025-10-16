@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckbpvfyp122on"]
+
+[ext_resource type="PackedScene" uid="uid://cuywbdo4npxox" path="res://Scene/BuildingPrefab/Building.res" id="1_olqc1"]
+
+[node name="power_plant" instance=ExtResource("1_olqc1")]
+item_name = &"Power_Plant"
+
+[node name="TileMapLayer" parent="." index="0"]
+tile_map_data = PackedByteArray(0, 0, 3, 0, 3, 0, 0, 0, 75, 0, 14, 0, 0, 0)

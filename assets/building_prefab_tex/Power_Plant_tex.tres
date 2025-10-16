@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://cc637mu27q4xb"]
+
+[ext_resource type="Texture2D" uid="uid://bad76qpec8wsm" path="res://assets/building_prefab_tex/Building.png" id="1_3lmgi"]
+
+[resource]
+atlas = ExtResource("1_3lmgi")
+region = Rect2(1199.42, 234.244, 107.952, 83.2773)

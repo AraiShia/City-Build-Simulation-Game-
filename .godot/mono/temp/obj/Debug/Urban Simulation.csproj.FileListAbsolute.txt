@@ -1,0 +1,17 @@
+D:\GodotEngine\Projects\urban-simulation\.godot\mono\temp\bin\Debug\Urban Simulation.deps.json
+D:\GodotEngine\Projects\urban-simulation\.godot\mono\temp\bin\Debug\Urban Simulation.runtimeconfig.json
+D:\GodotEngine\Projects\urban-simulation\.godot\mono\temp\bin\Debug\Urban Simulation.dll
+D:\GodotEngine\Projects\urban-simulation\.godot\mono\temp\bin\Debug\Urban Simulation.pdb
+D:\GodotEngine\Projects\urban-simulation\.godot\mono\temp\bin\Debug\GodotSharp.dll
+D:\GodotEngine\Projects\urban-simulation\.godot\mono\temp\bin\Debug\GodotSharpEditor.dll
+D:\GodotEngine\Projects\urban-simulation\.godot\mono\temp\obj\Debug\Urban Simulation.csproj.AssemblyReference.cache
+D:\GodotEngine\Projects\urban-simulation\.godot\mono\temp\obj\Debug\Urban Simulation.GeneratedMSBuildEditorConfig.editorconfig
+D:\GodotEngine\Projects\urban-simulation\.godot\mono\temp\obj\Debug\Urban Simulation.AssemblyInfoInputs.cache
+D:\GodotEngine\Projects\urban-simulation\.godot\mono\temp\obj\Debug\Urban Simulation.AssemblyInfo.cs
+D:\GodotEngine\Projects\urban-simulation\.godot\mono\temp\obj\Debug\Urban Simulation.csproj.CoreCompileInputs.cache
+D:\GodotEngine\Projects\urban-simulation\.godot\mono\temp\obj\Debug\Urban Si.0FAE8C9D.Up2Date
+D:\GodotEngine\Projects\urban-simulation\.godot\mono\temp\obj\Debug\Urban Simulation.dll
+D:\GodotEngine\Projects\urban-simulation\.godot\mono\temp\obj\Debug\refint\Urban Simulation.dll
+D:\GodotEngine\Projects\urban-simulation\.godot\mono\temp\obj\Debug\Urban Simulation.pdb
+D:\GodotEngine\Projects\urban-simulation\.godot\mono\temp\obj\Debug\Urban Simulation.genruntimeconfig.cache
+D:\GodotEngine\Projects\urban-simulation\.godot\mono\temp\obj\Debug\ref\Urban Simulation.dll

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BuildingResource" load_steps=4 format=3 uid="uid://ctmtcavjglw6j"]
+
+[ext_resource type="PackedScene" uid="uid://cdttpw0hyfwrx" path="res://Scene/BuildingPrefab/BuildingPrefabsLayer/residential.tscn" id="1_3wjio"]
+[ext_resource type="Script" uid="uid://dhq3lwsdvt365" path="res://Scene/BuildingPrefab/buildings_resource.gd" id="1_q1j15"]
+[ext_resource type="Texture2D" uid="uid://c3hpg5ligjuw3" path="res://assets/building_prefab_tex/Residential_tex.tres" id="2_3wjio"]
+
+[resource]
+script = ExtResource("1_q1j15")
+Name = "Residential"
+icon = ExtResource("2_3wjio")
+BuildingScene = ExtResource("1_3wjio")

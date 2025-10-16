@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://by3eq3ixek76p"]
+
+[ext_resource type="PackedScene" uid="uid://cuywbdo4npxox" path="res://Scene/BuildingPrefab/Building.res" id="1_3ioer"]
+
+[node name="Road" instance=ExtResource("1_3ioer")]
+
+[node name="TileMapLayer" parent="." index="0"]
+position = Vector2(-8, -8)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 2, 0, 5, 0, 6, 0, 0, 0, 1, 0, 0, 0, 2, 0, 5, 0, 6, 0, 0, 0, 2, 0, 0, 0, 2, 0, 5, 0, 6, 0, 0, 0, 3, 0, 0, 0, 2, 0, 5, 0, 6, 0, 0, 0, 4, 0, 0, 0, 2, 0, 5, 0, 6, 0, 0, 0)
